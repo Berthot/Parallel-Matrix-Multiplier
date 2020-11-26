@@ -19,6 +19,15 @@ public class Matrix implements Serializable {
         }
     }
 
+    public void GenerateEmptyMatrix(int columns, int rows) {
+        matrix = new double[columns][rows];
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
+                matrix[row][column] = -1.0;
+            }
+        }
+    }
+
     public void SaveMatrixInCsv(String fileName) throws IOException {
         FileWriter csv;
         csv = new FileWriter("Files/" + fileName + ".csv");
@@ -57,28 +66,26 @@ public class Matrix implements Serializable {
         }
     }
 
-    public void SetMatrixSize(int rows, int columns){
+    public void SetMatrixSize(int rows, int columns) {
         matrix = new double[rows][columns];
     }
 
-    public void SetValueInMatrix(int row, int column, double value){
+    public void SetValueInMatrix(int row, int column, double value) {
         matrix[row][column] = value;
     }
 
 
-    public int GetColumnLength(){
+    public int GetColumnLength() {
         return matrix[0].length;
     }
 
-    public int GetRowLength(){
+    public int GetRowLength() {
         return matrix.length;
     }
 
-    public double[][] GetMatrix(){
+    public double[][] GetMatrix() {
         return matrix;
     }
-
-
 
 
     private double GenerateRandomDoubleValue() {
@@ -91,12 +98,17 @@ public class Matrix implements Serializable {
             for (int column = 0; column < matrix[0].length; column++) {
                 var value = row[column];
                 String val = String.valueOf(value);
-                if(val.length() == 4)
+                if (val.length() == 4)
                     csvLine.append(value).append(" | ");
                 else
                     csvLine.append(value).append("  | ");
             }
             System.out.println(csvLine.substring(0, csvLine.length() - 3));
         }
+    }
+
+
+    public double GetValue(int lineMatrixA, int columnMatrixB) {
+        return matrix[lineMatrixA][columnMatrixB];
     }
 }

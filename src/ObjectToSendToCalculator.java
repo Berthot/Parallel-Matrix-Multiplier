@@ -1,40 +1,34 @@
-public class ObjectToSendToCalculator {
+import java.io.Serializable;
+import java.util.ArrayList;
 
-    private double[][] matrixA;
-    private double[][] matrixB;
+public class ObjectToSendToCalculator implements Serializable {
 
-    private int rowEnd;
-    private int rowStart;
-    private int columnStart;
-    private int columnEnd;
+    private final Matrix matrixA;
+    private final Matrix matrixB;
 
-    public ObjectToSendToCalculator(double[][] matrixA, double[][] matrixB, int rowStart, int rowEnd, int columnStart, int columnEnd) {
+    private final int[] rowsLimit;
+    private final int[] columnsLimit;
+
+    public ObjectToSendToCalculator(Matrix matrixA, Matrix matrixB, int[] rowsLimit, int[] columnsLimit) {
         this.matrixA = matrixA;
         this.matrixB = matrixB;
-        this.rowEnd = rowEnd;
-        this.rowStart = rowStart;
-        this.columnStart = columnStart;
-        this.columnEnd = columnEnd;
+        this.columnsLimit = columnsLimit;
+        this.rowsLimit = rowsLimit;
     }
 
-    public double[][] getMatrixA() {
+    public Matrix getMatrixA() {
         return matrixA;
     }
 
-    public double[][] getMatrixB() {
+    public Matrix getMatrixB() {
         return matrixB;
     }
 
-    public int getRowEnd() {
-        return rowEnd;
+    public int[] getColumnsLimit() {
+        return columnsLimit;
     }
 
-    public int getColumnStart() {
-        return columnStart;
+    public int[] getRowsLimit() {
+        return rowsLimit;
     }
-
-    public int getColumnEnd() {
-        return columnEnd;
-    }
-
 }
