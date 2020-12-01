@@ -22,7 +22,7 @@ public class CoordinatorServer {
             System.out.println("--------------------------------------------------------------");
             for (ObjectToSendToCalculator sendToCalculator : this.coordinator.sendToCalculators) {
                 final Socket socket = s.accept();
-                System.out.printf("Matrix [ %s ] recebida..%n", sendToCalculator.getName());
+                System.out.printf("Matrix [ %s ] enviada..%n", sendToCalculator.getName());
                 var thread = new CoordinatorOperationServer(socket, sendToCalculator, sendToCalculator.getName());
                 thread.start();
                 coordinatorList.add(thread);

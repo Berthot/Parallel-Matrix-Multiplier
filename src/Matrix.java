@@ -11,7 +11,7 @@ public class Matrix implements Serializable {
     }
 
     public void GenerateRandomMatrix(int columns, int rows) {
-        matrix = new double[columns][rows];
+        matrix = new double[rows][columns];
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
                 matrix[row][column] = GenerateRandomDoubleValue();
@@ -20,7 +20,7 @@ public class Matrix implements Serializable {
     }
 
     public void GenerateEmptyMatrix(int columns, int rows) {
-        matrix = new double[columns][rows];
+        matrix = new double[rows][columns];
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
                 matrix[row][column] = -1.0;
