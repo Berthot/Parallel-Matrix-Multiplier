@@ -19,14 +19,15 @@ public class CoordinatorServer {
             s.bind(new InetSocketAddress(Ports.PORT_COORDINATOR));
             System.out.println("Servidor de envio de matrix...");
             List<CoordinatorOperationServer> coordinatorList = new ArrayList<>();
-
+            System.out.println("--------------------------------------------------------------");
             for (ObjectToSendToCalculator sendToCalculator : this.coordinator.sendToCalculators) {
                 final Socket socket = s.accept();
-                System.out.printf("Matrix [ %s ] recebida..%n ", sendToCalculator.getName());
+                System.out.printf("Matrix [ %s ] recebida..%n", sendToCalculator.getName());
                 var thread = new CoordinatorOperationServer(socket, sendToCalculator, sendToCalculator.getName());
                 thread.start();
                 coordinatorList.add(thread);
             }
+            System.out.println("--------------------------------------------------------------");
 
             for (var x :coordinatorList){
                 x.join();

@@ -10,9 +10,9 @@ public class Main {
 //        matrixA.GetMatrixByCsv("matrixA");
 //        matrixB.GetMatrixByCsv("matrixB");
 
-        matrixA.GenerateRandomMatrix(500,500);
-        matrixB.GenerateRandomMatrix(500,500);
-//
+//        matrixA.GenerateRandomMatrix(500,500);
+//        matrixB.GenerateRandomMatrix(500,500);
+
 //        matrixA.SaveMatrixInCsv("matrixA");
 //        matrixB.SaveMatrixInCsv("matrixB");
 
@@ -29,7 +29,7 @@ public class Main {
 
         server.IniciarServer();
 
-        cordinator.newMatrix.SaveMatrixInCsv("batata");
+        cordinator.newMatrix.SaveMatrixInCsv("matrix_resultado");
 
 
 
