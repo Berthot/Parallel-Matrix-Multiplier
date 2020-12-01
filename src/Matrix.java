@@ -10,7 +10,7 @@ public class Matrix implements Serializable {
 
     }
 
-    public void GenerateRandomMatrix(int columns, int rows) {
+    public void GenerateRandomMatrix(int rows, int columns) {
         matrix = new double[rows][columns];
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
@@ -19,7 +19,7 @@ public class Matrix implements Serializable {
         }
     }
 
-    public void GenerateEmptyMatrix(int columns, int rows) {
+    public void GenerateEmptyMatrix(int rows, int columns) {
         matrix = new double[rows][columns];
         for (int row = 0; row < rows; row++) {
             for (int column = 0; column < columns; column++) {
