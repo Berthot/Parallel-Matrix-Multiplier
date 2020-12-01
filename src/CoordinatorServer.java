@@ -5,15 +5,14 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoordinatorServer extends Thread {
+public class CoordinatorServer {
     private Coordinator coordinator;
 
     public CoordinatorServer(Coordinator coordinator) {
         this.coordinator = coordinator;
     }
 
-    @Override
-    public void run() {
+    public void IniciarServer() {
         try {
 
             ServerSocket s = new ServerSocket();

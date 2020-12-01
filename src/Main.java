@@ -13,6 +13,9 @@ public class Main {
         matrixA.GenerateRandomMatrix(2000,2000);
         matrixB.GenerateRandomMatrix(2000,2000);
 
+//        matrixA.SaveMatrixInCsv("matrixA");
+//        matrixB.SaveMatrixInCsv("matrixB");
+
 //        var calculatorTest = new CalculatorTest(matrixA, matrixB);
 //        calculatorTest.CalculateMatrix();
 //        calculatorTest.newMatrix.SaveMatrixInCsv("batata-safe");
@@ -24,8 +27,7 @@ public class Main {
         var server = new CoordinatorServer(cordinator);
 
 
-        server.start();
-        server.join();
+        server.IniciarServer();
 
         cordinator.newMatrix.SaveMatrixInCsv("batata");
 
