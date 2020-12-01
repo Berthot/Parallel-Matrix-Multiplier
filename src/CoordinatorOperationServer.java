@@ -9,7 +9,8 @@ public class CoordinatorOperationServer extends Thread {
     private ObjectToSendToCalculator receiveFromCalculator;
     private Matrix response;
 
-    public CoordinatorOperationServer(Socket socket, ObjectToSendToCalculator receiveFromCalculator) {
+    public CoordinatorOperationServer(Socket socket, ObjectToSendToCalculator receiveFromCalculator, String name) {
+        super(name);
         this.socket = socket;
         this.receiveFromCalculator = receiveFromCalculator;
     }

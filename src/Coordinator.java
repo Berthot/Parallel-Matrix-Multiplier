@@ -57,28 +57,32 @@ public class Coordinator {
     private ObjectToSendToCalculator PartitionD(int columnLength, int rowLength, int plus) {
         return new ObjectToSendToCalculator(this.matrixA, this.matrixB,
                 getRange(rowLength / 2 + plus, rowLength - plus),
-                getRange(columnLength / 2, columnLength - plus)
+                getRange(columnLength / 2, columnLength - plus),
+                "Matrix D"
         );
     }
 
     private ObjectToSendToCalculator PartitionC(int columnLength, int rowLength, int plus) {
         return new ObjectToSendToCalculator(this.matrixA, this.matrixB,
                 getRange(rowLength / 2 + plus, rowLength - plus),
-                getRange(0, columnLength / 2 + plus)
+                getRange(0, columnLength / 2 + plus),
+                "Matrix C"
         );
     }
 
     private ObjectToSendToCalculator PartitionB(int columnLength, int rowLength, int plus) {
         return new ObjectToSendToCalculator(this.matrixA, this.matrixB,
                 getRange(0, rowLength / 2 - plus),
-                getRange(columnLength / 2, columnLength - plus)
+                getRange(columnLength / 2, columnLength - plus),
+                "Matrix B"
         );
     }
 
     private ObjectToSendToCalculator PartitionA(int columnLength, int rowLength, int plus) {
         return new ObjectToSendToCalculator(this.matrixA, this.matrixB,
                 getRange(0, rowLength / 2 - plus),
-                getRange(0, columnLength / 2 - plus)
+                getRange(0, columnLength / 2 - plus),
+                "Matrix A"
         );
     }
 

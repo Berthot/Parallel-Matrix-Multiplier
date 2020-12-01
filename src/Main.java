@@ -10,9 +10,9 @@ public class Main {
 //        matrixA.GetMatrixByCsv("matrixA");
 //        matrixB.GetMatrixByCsv("matrixB");
 
-        matrixA.GenerateRandomMatrix(2000,2000);
-        matrixB.GenerateRandomMatrix(2000,2000);
-
+        matrixA.GenerateRandomMatrix(500,500);
+        matrixB.GenerateRandomMatrix(500,500);
+//
 //        matrixA.SaveMatrixInCsv("matrixA");
 //        matrixB.SaveMatrixInCsv("matrixB");
 
